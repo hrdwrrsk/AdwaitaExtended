@@ -1,0 +1,3 @@
+# Ignore meson generated 'build' dirs
+build/
+/obj-*/
