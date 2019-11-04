@@ -1,9 +1,9 @@
 [X-GNOME-Metatheme]
-Name=Theme-Starter-Dark
+Name=AdwaitaExtended-dark
 Type=X-GNOME-Metatheme
-Comment=Ubuntu community theme
+Comment=Adwaita Extended - dark
 Encoding=UTF-8
-GtkTheme=Theme-Starter-Dark
+GtkTheme=AdwaitaEx-dark
 IconTheme=Adwaita
 CursorTheme=Adwaita
 CursorSize=24

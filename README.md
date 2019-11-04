@@ -1,5 +1,6 @@
 # AdwaitaExtended
 =====
+
 AdwaitaExtended is a stock Adwaita theme modified with:
 
 - Uses compact variant by default `$sizevariant: compact;` (to make it better for low-resolution laptops)
