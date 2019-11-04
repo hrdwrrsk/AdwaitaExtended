@@ -1,0 +1,14 @@
+/* Dash to Dock */
+
+#dashtodockContainer {
+	&.left, &.right { #dash { padding: 1px 0; } }
+
+	&.top, &.bottom { #dash { padding: 0 1px; } }
+
+	.dash-item-container > StWidget { padding: 4px 5px; }
+
+	.app-well-app-running-dot {
+		width: 6px;
+  	height: 2px;
+	}
+}

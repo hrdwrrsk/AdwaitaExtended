@@ -1,0 +1,9 @@
+[X-GNOME-Metatheme]
+Name=Theme-Starter-Dark
+Type=X-GNOME-Metatheme
+Comment=Ubuntu community theme
+Encoding=UTF-8
+GtkTheme=Theme-Starter-Dark
+IconTheme=Adwaita
+CursorTheme=Adwaita
+CursorSize=24
