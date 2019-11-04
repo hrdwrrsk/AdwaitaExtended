@@ -11,7 +11,7 @@ AdwaitaExtended is a stock Adwaita theme modified with:
 ### Installation
 Clone this repo, and open directory with terminal and then:
 ```
-meson build
+meson build --prefix=/usr
 sudo ninja -C build install
 ```
 ### Credits
