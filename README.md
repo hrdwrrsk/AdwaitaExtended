@@ -4,7 +4,7 @@ AdwaitaExtended is a stock Adwaita theme modified with:
 
 - Uses compact variant by default `$sizevariant: compact;` (to make it better for low-resolution laptops)
 - Consistent GTK2 theme (finally!)
-- Xfce4 support (currently no xfwm4 theme, however. But if you want consistency just replace xfwm4 with metacity as default WM for Xfce4)
+- Xfce4 support (with xfwm4 theme included)
 - Visual tweaks are separated from `_common.scss` to make it synched up with upstream and 'broken-less' (with exception is GNOME shell theme)
 - Refined GNOME shell theme to make it compact + *light variant enabled*
 
