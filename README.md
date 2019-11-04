@@ -1,5 +1,4 @@
 # AdwaitaExtended
-=====
 
 AdwaitaExtended is a stock Adwaita theme modified with:
 
@@ -7,7 +6,7 @@ AdwaitaExtended is a stock Adwaita theme modified with:
 - Consistent GTK2 theme (finally!)
 - Xfce4 support (currently no xfwm4 theme, however. But if you want consistency just replace xfwm4 with metacity as default WM for Xfce4)
 - Visual tweaks are separated from `_common.scss` to make it synched up with upstream and 'broken-less' (with exception is GNOME shell theme)
-- Refined GNOME shell theme to make it compact
+- Refined GNOME shell theme to make it compact + *light variant enabled*
 
 ### Installation
 Clone this repo, and open directory with terminal and then:
