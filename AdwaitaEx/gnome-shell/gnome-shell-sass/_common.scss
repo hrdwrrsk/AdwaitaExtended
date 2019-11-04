@@ -834,7 +834,7 @@ StScrollBar {
   }
 
   #panelLeft, #panelCenter { // spacing between activities<>app menu and such
-    spacing: 4px;
+    spacing: 0;
   }
 
   .panel-corner {
@@ -855,7 +855,7 @@ StScrollBar {
   }
 
   .panel-button {
-    -natural-hpadding: 12px;
+    -natural-hpadding: 9px;
     -minimum-hpadding: 6px;
     font-weight: bold;
     color: #ccc;
@@ -1374,7 +1374,7 @@ StScrollBar {
       border-color: $selected_bg_color;
     }
 
-    .search-entry-icon { icon-size: 1em; padding: 0 4px; color: $fg_color; }
+    .search-entry-icon { icon-size: 16px; padding: 0 4px; color: $fg_color; }
 
     &:hover, &:focus {
       .search-entry-icon { color: transparentize($fg_color,.3); }
