@@ -48,15 +48,6 @@
          id="stop823" />
     </linearGradient>
     <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient825"
-       id="linearGradient991"
-       gradientUnits="userSpaceOnUse"
-       x1="6.3499999"
-       y1="248.31665"
-       x2="6.3499999"
-       y2="253.60832" />
-    <linearGradient
        id="linearGradient5271"
        inkscape:collect="always">
       <stop
@@ -68,15 +59,6 @@
          offset="1"
          id="stop5269" />
     </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient825"
-       id="linearGradient1711"
-       gradientUnits="userSpaceOnUse"
-       x1="6.3499999"
-       y1="248.31665"
-       x2="6.3499999"
-       y2="253.60832" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient825"
@@ -105,6 +87,24 @@
        y1="3.0000136"
        x2="10.499999"
        y2="19.000013" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient825"
+       id="linearGradient1172"
+       gradientUnits="userSpaceOnUse"
+       x1="6.3499999"
+       y1="248.31665"
+       x2="6.3499999"
+       y2="254.66666" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient825"
+       id="linearGradient1199"
+       gradientUnits="userSpaceOnUse"
+       x1="6.3499999"
+       y1="248.31665"
+       x2="6.3499994"
+       y2="254.66666" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -113,17 +113,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="148.89602"
-     inkscape:cy="29.02539"
+     inkscape:zoom="8.5741877"
+     inkscape:cx="33.976658"
+     inkscape:cy="151.65202"
      inkscape:document-units="px"
-     inkscape:current-layer="stick-toggled-pressed"
-     showgrid="false"
+     inkscape:current-layer="layer1"
+     showgrid="true"
      units="px"
      inkscape:snap-bbox="true"
      inkscape:bbox-nodes="true"
      inkscape:window-width="1366"
-     inkscape:window-height="678"
+     inkscape:window-height="691"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -260,7 +260,7 @@
          height="6.3500113"
          width="2.1166668"
          id="rect868"
-         style="opacity:1;fill:url(#linearGradient991);fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
+         style="opacity:1;fill:url(#linearGradient1172);fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
       <rect
          rx="2.9293874e-06"
          ry="2.9293874e-06"
@@ -537,7 +537,7 @@
          height="6.350008"
          width="4.2333331"
          id="rect868-5"
-         style="opacity:1;fill:url(#linearGradient1711);fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
+         style="opacity:1;fill:url(#linearGradient1199);fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
       <rect
          rx="2.9293874e-06"
          ry="2.9293874e-06"
