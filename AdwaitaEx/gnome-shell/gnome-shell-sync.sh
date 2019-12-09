@@ -71,7 +71,6 @@ files=(
   key-shift-latched-uppercase.svg
   key-shift.svg
   key-shift-uppercase.svg
-  meson.build
   message-indicator-symbolic.svg
   no-events.svg
   noise-texture.png

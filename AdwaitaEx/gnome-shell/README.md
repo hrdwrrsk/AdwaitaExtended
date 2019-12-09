@@ -30,6 +30,3 @@ final CSS files.
 [colors]: data/theme/gnome-shell-sass/_colors.scss
 [drawing]: data/theme/gnome-shell-sass/_drawing.scss
 [sass-web]: http://sass-lang.com/documentation/
-
-## About 'upstream' folder
-Upstream folder is a reserved area for upstream shell theme file (including assets). Used for tracking new changes from upstream and synced with `gnome-shell-sync.sh` script
