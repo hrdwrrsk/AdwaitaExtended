@@ -35,7 +35,7 @@ $_bubble_borders_color: lighten($borders_color, if($variant=='light', 0%, 5%));
 $_hover_bg_color: lighten($bg_color,if($variant=='light', 5%, 3%));
 $_active_bg_color: if($variant == 'light', darken($bg_color, 14%), darken($bg_color, 9%));
 
-$font-size: 11;
+$font-size: 9;
 $font-family: Cantarell, Sans-Serif;
 
 stage {
@@ -51,7 +51,7 @@ stage {
   border-radius: $button_radius;
   border-width: 1px;
   min-height: 22px;
-  padding: 4px 32px;
+  padding: 2px 30px;
   @include button(normal);
   &:focus { @include button(focus, $c:$_hover_bg_color, $tc:$fg_color); }
   &:hover { @include button(hover, $c:$_hover_bg_color, $tc:$fg_color); }
@@ -66,7 +66,7 @@ stage {
   &:hover { @include button(hover, $c:$_hover_bg_color, $tc:$fg_color); }
   &:focus { @include button(focus, $c:$_hover_bg_color, $tc:$fg_color); }
   &:active { @include button(active, $c:$_active_bg_color, $tc:$fg_color); }
-  padding: 12px;
+  padding: 10px;
   border-top: 1px solid $_bubble_borders_color;
 
   &:first-child {
@@ -85,7 +85,8 @@ stage {
 /* Entries */
 StEntry {
   border-radius: $button_radius;
-  padding: 4px;
+  padding: 0 8px;
+  min-height: 28px;
   border-width: 1px;
   color: $fg_color;
   @include entry(normal);
@@ -136,7 +137,7 @@ StScrollBar {
 
 .slider {
   height: 1em;
-  -barlevel-height: 0.3em;
+  -barlevel-height: 3px;
   -barlevel-background-color: transparentize($fg_color, 0.9); //background of the trough
   -barlevel-border-color: $borders_color; //trough border color
   -barlevel-active-background-color: $selected_bg_color; //active trough fill
@@ -145,7 +146,7 @@ StScrollBar {
   -barlevel-overdrive-border-color: darken($destructive_color,10%);
   -barlevel-overdrive-separator-width: 0.2em;
   -barlevel-border-width: 1px;
-  -slider-handle-radius: 8px;
+  -slider-handle-radius: 6px;
   -slider-handle-border-width: 1px;
   -slider-handle-border-color: $borders_color;
   color: if($variant == 'light', lighten($bg_color, 10%), darken($bg_color,4%));
@@ -170,8 +171,8 @@ StScrollBar {
 /* Switches */
 .toggle-switch {
   color: $fg_color;
-  width: 46px;
-  height: 22px;
+  width: 40px;
+  height: 16px;
   background-size: contain;
   background-image: if($variant == 'light', url("resource:///org/gnome/shell/theme/toggle-off.svg"),
 					    url("resource:///org/gnome/shell/theme/toggle-off-dark.svg"));
@@ -318,7 +319,7 @@ StScrollBar {
 
   .end-session-dialog-app-list-item-description {
     color: darken($fg_color,5%);
-    font-size: 10pt;
+    font-size: 8pt;
   }
 
 /* ShellMountOperation Dialogs */
@@ -375,7 +376,7 @@ StScrollBar {
   }
 
   .mount-dialog-app-list-item-name {
-    font-size: 10pt;
+    font-size: 8pt;
   }
 
 
@@ -401,13 +402,13 @@ StScrollBar {
   }
 
   .prompt-dialog-error-label {
-    font-size: 10pt;
+    font-size: 8pt;
     color: $warning_color;
     padding-bottom: 8px;
   }
 
   .prompt-dialog-info-label {
-    font-size: 10pt;
+    font-size: 8pt;
     padding-bottom: 8px;
   }
 
@@ -416,7 +417,7 @@ StScrollBar {
   }
 
   .prompt-dialog-null-label {
-    font-size: 10pt;
+    font-size: 8pt;
     padding-bottom: 8px;
   }
 
@@ -825,7 +826,7 @@ StScrollBar {
 #panel {
   background-color: black;
   font-weight: bold;
-  height: 1.99em;
+  height: 2.40em;
   font-feature-settings: "tnum";
 
   &.unlock-screen,
@@ -835,7 +836,7 @@ StScrollBar {
   }
 
   #panelLeft, #panelCenter { // spacing between activities<>app menu and such
-    spacing: 4px;
+    spacing: 2px;
   }
 
   .panel-corner {
@@ -856,8 +857,8 @@ StScrollBar {
   }
 
   .panel-button {
-    -natural-hpadding: 12px;
-    -minimum-hpadding: 6px;
+    -natural-hpadding: 10px;
+    -minimum-hpadding: 2px;
     font-weight: bold;
     color: #ccc;
 
@@ -959,7 +960,7 @@ StScrollBar {
 
     .datemenu-today-button .date-label {
       font-size: 1.5em;
-      font-weight: 300;
+      font-weight: 900;
     }
 
     .world-clocks-header,
@@ -1032,10 +1033,10 @@ StScrollBar {
     .calendar-day-base {
       font-size: 80%;
       text-align: center;
-      width: 32px; height: 32px;
+      width: 28px; height: 28px;
       padding: 0.1em;
       margin: 2px;
-      border-radius: 100%;
+      border-radius: 99px;
       font-feature-settings: "tnum";
       &:hover, &:focus { background-color: $_hover_bg_color; }
       &:active,&:selected {
@@ -1093,8 +1094,8 @@ StScrollBar {
       }
 
         .message-list-clear-button.button {
-	  @extend %button;
-          margin: 6px;
+	        @extend %button;
+          margin: 0px;
         }
 
         .message-list-sections {
@@ -1174,7 +1175,7 @@ StScrollBar {
           }
 
           .media-message-cover-icon {
-            icon-size: 48px !important;
+            icon-size: 32px !important;
             &.fallback {
               color: lighten($fg_color,10%);
               background-color: $bg_color;
@@ -1372,18 +1373,18 @@ StScrollBar {
   //search entry
   .search-entry, %search_entry {
     width: 320px;
-    padding: 7px 9px;
+    padding: 1px 9px;
     border-radius: 18px;
     color: $fg_color;
     background-color: $base_color;
     border-color: $borders_color;
     &:focus {
-      padding: 6px 8px;
+      padding: 0 8px;
       border-width: 2px;
       border-color: $selected_bg_color;
     }
 
-    .search-entry-icon { icon-size: 1em; padding: 0 4px; color: $fg_color; }
+    .search-entry-icon { icon-size: 16px; padding: 0 4px; color: $fg_color; }
 
     &:hover, &:focus {
       .search-entry-icon { color: transparentize($fg_color,.3); }
@@ -1650,12 +1651,12 @@ StScrollBar {
 
   // Banners
   .notification-banner {
-    font-size: 11pt;
+    font-size: 9pt;
     width: 34em;
     margin: 5px;
     border-radius: $modal_radius;
     border: if($variant == 'light', none, $_bubble_borders_color);
-    min-height: 64px;
+    min-height: 48px;
     box-shadow: 0 1px 2px transparentize(black, 0.7);
     &:hover { background: $bg_color; }
     &, &:focus, &:active {
