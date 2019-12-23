@@ -210,3 +210,428 @@ dialog.xfsm-logout-dialog.keycap {
 	
 	separator.horizontal { background-color: transparent; }
 }
+
+/**** Budgie-desktop ****/
+$budgie_borders: if($variant == 'light', transparentize(black, 0.77), $borders_color);
+
+.budgie-container {
+	padding: 0;
+	background-color: transparent
+}
+
+.budgie-panel {
+	&, &:backdrop {
+		color: $fg_color;
+		background-color: $bg_color;
+		
+		button, button:backdrop {
+			@extend %button_basic_flat;
+			color: $fg_color;
+			border: 0;
+			border-radius: 0;
+			box-shadow: none;
+			
+			&:hover, &:active, &:checked {
+				box-shadow: inset 0 -2px $selected_bg_color;
+			}
+		}
+		
+		&.horizontal button { padding: 0 $_circ_btn_pad; }
+		&.vertical button { padding: $_circ_btn_pad 0; }
+		
+		&.transparent {
+			background-color: if($variant == 'light', transparentize($bg_color, 0.10), $osd_bg_color);
+		}
+	}
+}
+
+@each $_panel_pos, $_border_pos in (top, bottom),
+																	 (bottom, top),
+																	 (left, right),
+																	 (right, left) {
+	.#{$_panel_pos} .budgie-panel {
+		&, &:backdrop {
+			background-clip: padding-box;
+			border-#{$_border_pos}: 1px solid $budgie_borders;
+			
+			//&.dock-mode {
+			//	background-color: $osd_bg_color;
+			//	color: $osd_fg_color;
+			//	border-color: $osd_bg_color;
+			//	
+			//	button {
+			//		&, &:backdrop {
+			//			color: $osd_fg_color;
+			//		}
+			//	}
+			//}
+		}
+	}
+}
+
+// 10.5x icon task list
+box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher {
+  &:hover,
+  &:checked,
+  &.running { box-shadow: none; } // unset before drawing indicators
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+// raven sidebar
+frame.raven-frame > border {
+  border-style: none;
+}
+
+$raven_borders: ((top, bottom), (bottom, top), (left, right), (right, left));
+
+@each $pos, $b_pos in $raven_borders {
+  // Raven borders
+  .#{$pos} frame.raven-frame > border {
+    margin-#{$b_pos}: 32px;
+		box-shadow: 0 3px 9px 1px transparentize(black, 0.5), 0 0 0 1px $budgie_borders;
+  }
+}
+
+.raven {
+	> box { margin-bottom: -10px; }
+	
+	background-color: $bg_color;
+	color: $fg_color;
+	padding: 0;
+	border: none;
+	
+	.raven-background {
+    border-style: solid none;
+    border-width: 1px;
+    border-color: $borders_color;
+    background-color: $base_color;
+	}
+
+	.raven-header {
+		&:not(.top) {
+			margin-top: -7px;
+		}
+	
+		&.top {
+			@extend %titlebar; // use styling same as header bar
+		}
+		
+		&.bottom {
+			box-shadow: 0 -1px $budgie_borders;
+		}
+	}
+	
+	&-notifications-view {
+		.raven-notifications-group {
+			.notification-clone {
+				background-color: $bg_color;
+				border: 1px solid $borders_color;
+				padding: $_hb_btn_pad + 4px;
+				border-radius: $window_radius;
+				&:dir(ltr) { margin-right: $_hb_btn_pad; }
+				&:dir(rtl) { margin-left: $_hb_btn_pad; }
+			}
+		}
+	}
+	
+	scrolledwindow > .frame {
+		padding: 0;
+		
+		> box.vertical > box.vertical {
+			box-shadow: inset 0 -1px $budgie_borders;
+		}
+		
+		box.audio-widget {
+			list {
+				&.sound-devices row.activatable {
+					> box > label {
+						&:dir(ltr) { margin-left: $_switch_margin; }
+						&:dir(rtl) { margin-right: $_switch_margin; }
+					}
+				}
+			}
+			stackswitcher.linked {
+				border: 0;
+				> button.text-button.radio {
+					&:dir(ltr),
+					&:dir(rtl) {
+						margin-bottom: $_switch_margin;
+					}
+
+					&:first-child {
+						margin-left: $_switch_margin;
+					}
+
+					&:last-child {
+						margin-right: $_switch_margin;
+					}
+				}
+			}
+		}
+	}
+}
+
+// raven calendar applet
+calendar.raven-calendar {
+	border-width: 1px 0 1px 0;
+	border-style: solid;
+	border-color: $borders_color;
+}
+// raven mpris applet
+.raven-mpris {
+	@extend %osd;
+	button.image-button {
+		@extend %osd_button;
+	}
+}
+// powerstrip
+.powerstrip {
+	box-shadow: inset 0 1px $budgie_borders;
+}
+
+// notification/osds
+.budgie-osd-window,
+.budgie-switcher-window,
+.budgie-notification-window, { background-color: transparent; }
+
+.drop-shadow {
+	&, decoration { border-radius: $window_radius; }
+	margin: 12px;
+	background-color: $bg_color;
+	box-shadow: 0 3px 9px 1px transparentize(black, 0.5), 0 0 0 1px $budgie_borders;
+}
+
+%budgie_dialog {
+	&, decoration { border-radius: 7px; }
+	background-color: $bg_color;
+	box-shadow: 0 1px 2px transparentize(black, 0.8), 0 0 0 1px transparentize($budgie_borders, 0.1);
+}
+
+%budgie_dialog_button {
+	.linked.horizontal > button { // same as GTK 3 message dialog
+		padding: 10px 14px;
+		border-radius: 0;
+    border-left-style: solid;
+    border-right-style: none;
+    border-bottom-style: none;
+    
+    &:first-child{
+      border-left-style: none;
+      border-bottom-left-radius: 7px;
+      -gtk-outline-bottom-left-radius: 5px;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 7px;
+      -gtk-outline-bottom-right-radius: 5px;
+    }
+  }
+}
+
+.budgie-session-dialog, .budgie-polkit-dialog {
+	@extend %budgie_dialog;
+	border-bottom-left-radius: $window_radius+1;
+  border-bottom-right-radius: $window_radius+1;
+  
+  @extend %budgie_dialog_button;
+}
+
+// popovers
+window.budgie-popover:not(.csd) {
+	&.background {
+		padding: 2px;
+		background-color: $popover_bg_color;
+		border-radius: $popover_radius;
+		
+		background-clip: padding-box;
+		border: 1px solid if($variant=='light', transparentize(black, 0.77), transparentize($borders_color, 0.1));
+		
+		box-shadow: 0 1px 2px transparentize(black, 0.7);
+	}
+	
+	> frame.container {
+		&,
+		> border {
+			border-style: none;
+			background-color: transparent;
+		}
+		
+		padding: 4px;
+	}
+	
+	button {
+		min-height: 20px;
+  	padding-left: 5px;
+  	padding-right: 5px;
+  	border-radius: $button_radius;
+  	outline-offset: -2px;
+  	
+		@extend %undecorated_button;
+		
+		&:hover { background-color: $popover_hover_color; }
+
+  	&:selected { @extend %selected_items; }
+	}
+	
+	&.night-light-indicator {
+		button:not(spinbutton) {
+			@extend %button_basic;
+		}
+		
+		spinbutton {
+			@extend spinbutton;
+		}
+	}
+}
+
+.budgie-menu {
+	scrolledwindow,
+  list,
+  row,
+  scrollbar { // reset styling
+    min-width: 0;
+    min-height: 0;
+    border: none;
+    background: none;
+    box-shadow: none;
+  }
+  
+  margin: 1px;
+  
+  entry { margin-bottom: 3px; }
+  
+  scrolledwindow {
+		border: 1px solid $borders_color;
+		background-color: $base_color;
+	}
+	
+	row.activatable { // reset background
+    padding: 0;
+    background-image: none;
+    background-color: $base_color;
+    color: $fg_color;
+
+		border-left: 0;
+		border-right: 0;
+		border-radius: 0;
+
+		&:hover { background-color: if(variant == light, transparentize($fg_color, 0.9), transparentize($fg_color, 0.95)); }
+
+		button.flat { background: none; }
+	}
+	
+	.categories {
+		border: 1px solid $borders_color;
+		background-color: $sidebar_bg_color; // use sidebar bg
+
+		&:dir(ltr) {
+			border-left: 1px solid $borders_color;
+			border-right: 0;
+		}
+		&:dir(rtl) {
+			border-left: 0;
+			border-right: 1px solid $borders_color;
+		}
+
+		button.flat.radio.category-button {
+			border-radius: 0;
+			border-left: 0;
+			border-right: 0;
+			
+			&:hover { background-color: if(variant == light, transparentize($fg_color, 0.9), transparentize($fg_color, 0.95)); }
+		
+			&:checked { 
+				&, &:hover { @extend %selected_items; } 
+			}
+		}
+	}
+}
+
+.user-menu {
+	list,
+	row { // reset styling
+		border: none;
+		background: none;
+		box-shadow: none;
+	}
+	
+	row.activatable {
+		&:hover, &:selected { background: none; }
+	}
+}
+
+.night-light-indicator {
+	.view-header {
+		padding-top: 2px;
+		&:dir(ltr) { padding-right: 4px; }
+		&:dir(rtl) { padding-left: 4px; }
+
+		label {
+			font-weight: bold;
+			&:dir(ltr) { padding-left: 4px; }
+			&:dir(rtl) { padding-right: 4px; }
+		}
+	}
+}
+
+stack.icon-popover-stack {
+	margin: 6px;
+	
+	grid.horizontal {
+		> button.flat.image-button {
+			@include button(normal);
+			@extend %button;
+			@extend %linked;
+		}
+	}
+}
+
+// run dialog
+.background.csd.budgie-run-dialog {
+  @extend %budgie_dialog;
+
+  background-color: $bg_color;
+
+  entry {
+  	&, &.search {
+			margin: 5px;
+		}
+	}
+
+	scrolledwindow {
+		background-color: $base_color;
+		border: 1px solid $borders_color;
+		border-radius: 0;
+
+		margin: 0 5px 5px;
+	}
+}
+
+// workspace switcher applet
+widget > box.workspace-switcher {
+	> box.workspace-layout {
+		border: none;
+	}
+
+	widget.workspace-item {
+    border-width: 2px 1px;
+    border-style: solid;
+    border-color: $bg_color;
+    box-shadow: inset 0 0 0 1px transparentize($budgie_borders, 0.1);
+  }
+
+	widget.workspace-item {
+		background-color: $base_color;
+    &.current-workspace {
+			background-color: $base_color;
+			box-shadow: inset 0 0 0 1px $selected_bg_color;
+		}
+
+		label.workspace-more-label {
+			color: $fg_color;
+		}
+	}
+}
