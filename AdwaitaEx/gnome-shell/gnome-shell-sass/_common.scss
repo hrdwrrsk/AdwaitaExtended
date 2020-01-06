@@ -36,7 +36,7 @@ $_hover_bg_color: lighten($bg_color,if($variant=='light', 5%, 3%));
 $_active_bg_color: if($variant == 'light', darken($bg_color, 14%), darken($bg_color, 9%));
 
 $font-size: 9;
-$font-family: Cantarell, Sans-Serif;
+$font-family: 'Noto Sans', Cantarell, Sans-Serif;
 
 stage {
   font-family: $font-family;
@@ -1031,7 +1031,7 @@ StScrollBar {
       }
 
     .calendar-day-base {
-      font-size: 80%;
+      font-size: 90%;
       text-align: center;
       width: 28px; height: 28px;
       padding: 0.1em;
