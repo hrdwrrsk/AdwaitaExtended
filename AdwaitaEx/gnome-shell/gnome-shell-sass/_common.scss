@@ -59,6 +59,7 @@ $base_icon_size: 16px;
 
 // Stage
 stage {
+	font-family: "Noto Sans", Cantarell, sans-serif; // ensure compatibility with 3.34
   @include fontsize($base_font_size);
   color: $fg_color;
 }
