@@ -11,7 +11,7 @@
 
 .message-list-sections {
   spacing: $base_spacing;
-  margin: $base_margin * 4; // to account for scrollbar
+  margin: 0 $base_margin * 4; // to account for scrollbar
 }
 
 .message-list-section,

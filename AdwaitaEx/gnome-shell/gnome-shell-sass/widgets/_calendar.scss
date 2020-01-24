@@ -99,18 +99,18 @@
 
   .pager-button {
     background-color: transparent;
-    height: 32px;
-    width: 32px;
+    height: 28px;
+    width: 28px;
     border-radius: $base_border_radius;
     &:hover, &:focus { background-color: lighten($hover_bg_color, 5%); }
     &:active { background-color: $active_bg_color; }
   }
 
 
-  $calendar_day_size: 32px;
+  $calendar_day_size: 28px;
 
   .calendar-day-base {
-    @include fontsize($base_font_size - 3);
+    @include fontsize($base_font_size - 2);
     text-align: center;
     width: $calendar_day_size;
     height: $calendar_day_size;

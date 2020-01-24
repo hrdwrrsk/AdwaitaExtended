@@ -11,7 +11,7 @@ $app_icon_padding: 24px;
 
   .overview-icon {
     icon-size: $app_icon_size;
-    StIcon { margin-bottom: $base_margin; } // margin on icon so label isn't close
+    // StIcon { margin-bottom: $base_margin; } // margin on icon so label isn't close
   }
 }
 
