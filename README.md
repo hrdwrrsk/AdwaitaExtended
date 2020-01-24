@@ -1,5 +1,7 @@
-AdwaitaExtended
+AdwaitaExtended (WIP upstream shell theme refresh branch)
 =====
+Will be merged if 3.36 is out.
+
 AdwaitaExtended is a stock Adwaita theme modified with:
 
 - Uses compact variant by default `$sizevariant: compact;` (to make it better for low-resolution laptops)
