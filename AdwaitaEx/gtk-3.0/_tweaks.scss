@@ -20,3 +20,6 @@ placessidebar row {
   	min-width: 22px;
   }
 }
+
+/**** Fix slimmed circular buttons ****/
+* { & button.circular { min-width: 0; } }
