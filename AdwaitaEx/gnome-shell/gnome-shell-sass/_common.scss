@@ -1423,12 +1423,17 @@ StScrollBar {
 
   #dash {
     @extend %overview-panel;
+
+    border: 1px solid $osd_outer_borders_color;
+
     font-size: 9pt;
     padding: 4px 0;
     border-radius: 0px 9px 9px 0px;
+    border-left-width: 0px;
 
     &:rtl {
       border-radius: 9px 0 0 9px;
+      border-right-width: 0px;
     }
 
     .placeholder {
@@ -1608,12 +1613,18 @@ StScrollBar {
   // Workspace pager
   .workspace-thumbnails { //container ala dash
     @extend %overview-panel;
+
+    border: 1px solid $osd_outer_borders_color;
+
     visible-width: 32px; //amount visible before hover
     spacing: 11px;
     padding: 8px;
     border-radius: 9px 0 0 9px;
-    //border-width: 1px 0 1px 1px; //fixme: can't have non unoform borders :(
-    &:rtl { border-radius: 0 9px 9px 0;}
+    border-right-width: 0;
+    &:rtl { 
+      border-radius: 0 9px 9px 0;
+      border-left-width: 0;
+    }
 
     .placeholder {
       background-image: url("resource:///org/gnome/shell/theme/dash-placeholder.svg");
@@ -1624,6 +1635,7 @@ StScrollBar {
   .workspace-thumbnail-indicator {
     border: 2px solid $selected_bg_color;
     padding: 1px;
+    border-radius: 3px;
   }
 
   //Some hacks I don't even
@@ -1636,7 +1648,6 @@ StScrollBar {
 %overview-panel {
   color: $osd_fg_color;
   background-color: transparentize($osd_bg_color, 0.1);
-  border: none;
 }
 
 %status_text {
