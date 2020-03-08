@@ -36,7 +36,7 @@ $_hover_bg_color: lighten($bg_color,if($variant=='light', 5%, 3%));
 $_active_bg_color: if($variant == 'light', darken($bg_color, 14%), darken($bg_color, 9%));
 
 $font-size: 9;
-$font-family: 'Noto Sans', Cantarell, Sans-Serif;
+$font-family: 'Inter', Cantarell, Sans-Serif;
 
 stage {
   font-family: $font-family;
@@ -190,7 +190,7 @@ StScrollBar {
 
 /* Modal Dialogs */
 
-.headline { font-size: 110%; }
+.headline { @include fontsize($font-size + 2); }
 .lightbox { background-color: black; }
 .flashspot { background-color: white; }
 
@@ -207,7 +207,7 @@ StScrollBar {
   }
   .run-dialog-button-box { padding-top: 1em; }
   .run-dialog-label {
-    @include fontsize($font-size + 1.1);
+    @include fontsize($font-size + 2);
     font-weight: normal;
     color: $fg_color;
     padding-bottom: .4em;
@@ -217,7 +217,7 @@ StScrollBar {
 
   .mount-dialog-subject,
   .end-session-dialog-subject { //this should be a generic header class
-    @include fontsize($font-size * 1.3);
+    @include fontsize($font-size + 2);;
   }
 
 /* Message Dialog */
@@ -319,7 +319,7 @@ StScrollBar {
 
   .end-session-dialog-app-list-item-description {
     color: darken($fg_color,5%);
-    font-size: 8pt;
+    font-size: 7pt;
   }
 
 /* ShellMountOperation Dialogs */
@@ -376,7 +376,7 @@ StScrollBar {
   }
 
   .mount-dialog-app-list-item-name {
-    font-size: 8pt;
+    font-size: 7pt;
   }
 
 
@@ -402,13 +402,13 @@ StScrollBar {
   }
 
   .prompt-dialog-error-label {
-    font-size: 8pt;
+    font-size: 7pt;
     color: $warning_color;
     padding-bottom: 8px;
   }
 
   .prompt-dialog-info-label {
-    font-size: 8pt;
+    font-size: 7pt;
     padding-bottom: 8px;
   }
 
@@ -417,7 +417,7 @@ StScrollBar {
   }
 
   .prompt-dialog-null-label {
-    font-size: 8pt;
+    font-size: 7pt;
     padding-bottom: 8px;
   }
 
@@ -1319,7 +1319,7 @@ StScrollBar {
   .nm-dialog-header { font-weight: bold; }
 
   .nm-dialog-item {
-    font-size: 110%;
+    @include fontsize($font-size);
     border-bottom: 1px solid $borders_color;
     padding: 12px;
     spacing: 20px;
