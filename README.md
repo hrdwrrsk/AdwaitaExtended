@@ -1,4 +1,4 @@
-AdwaitaExtended
+AdwaitaExtended ('Bionic'/GNOME 3.28 version)
 =====
 AdwaitaExtended is a stock Adwaita theme modified with:
 
