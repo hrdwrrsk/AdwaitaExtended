@@ -1,5 +1,6 @@
 AdwaitaExtended
 =====
+**This master branch are for GNOME 3.36. If you use 3.34, download from `gnome-3-34` branch instead**
 AdwaitaExtended is a stock Adwaita theme modified with:
 
 - Uses compact variant by default `$sizevariant: compact;` (to make it better for low-resolution laptops)
