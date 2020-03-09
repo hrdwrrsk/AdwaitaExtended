@@ -50,16 +50,16 @@ $active_fg_color: darken($fg_color,if($variant=='light', 5%, 3%));
 $active_borders_color: darken($borders_color,if($variant=='light', 5%, 3%));
 
 // fonts
-$base_font_size: 11;
+$base_font_size: 100%;
 $text_shadow_color: if($variant == 'light', rgba(255,255,255,0.3), rgba(0,0,0,0.2));
 
 // icons
-$base_icon_size: 1.09em;
-// $base_icon_size: 16px;
+// $base_icon_size: 1.09em;
+$base_icon_size: 16px;
 
 // Stage
 stage {
-  @include fontsize($base_font_size);
+  font-size: $base_font_size;
   color: $fg_color;
 }
 

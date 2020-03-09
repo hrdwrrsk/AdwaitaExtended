@@ -45,13 +45,13 @@
 
   // weekday label
   .day-label {
-    @include fontsize($base_font_size+1);
+    font-size: $base_font_size + 10;
     font-weight: bold;
   }
 
   // date label
   .date-label {
-    @include fontsize($base_font_size+7);
+    font-size: $base_font_size + 70;
     font-weight: 1000;
   }
 }
@@ -88,7 +88,7 @@
   $calendar_day_size: 32px;
 
   .calendar-day-base {
-    @include fontsize($base_font_size - 3);
+    font-size: $base_font_size - 10;
     text-align: center;
     width: $calendar_day_size;
     height: $calendar_day_size;
@@ -107,7 +107,7 @@
     &.calendar-day-heading {
       color: lighten($fg_color,10%);
       margin-top: 1em;
-      @include fontsize($base_font_size - 4);
+      font-size: $base_font_size - 40;
     }
   }
 
@@ -163,7 +163,7 @@
   }
 
   .calendar-week-number {
-    @include fontsize($base_font_size - 4);
+    font-size: $base_font_size - 40;
     font-weight: bold;
     height: 1.8em;
     width: 2.3em; 
@@ -194,7 +194,7 @@
   // city label
   .world-clocks-city {
     color: $fg_color;
-    @include fontsize($base_font_size);
+    font-size: $base_font_size;
     font-weight: normal;
   }
 
@@ -203,7 +203,7 @@
     font-weight: bold;
     color: $fg_color;
     font-feature-settings: "lnum";
-    @include fontsize($base_font_size);
+    font-size: $base_font_size;
     text-align: right;
   }
 
@@ -211,7 +211,7 @@
   .world-clocks-timezone {
     color: darken($fg_color,20%);
     font-feature-settings: "tnum";
-    @include fontsize($base_font_size - 1);
+    font-size: $base_font_size - 10;
   }
 }
 
@@ -234,7 +234,7 @@
 
     &.location {
       font-weight: normal;
-      @include fontsize($base_font_size - 1);
+      font-size: $base_font_size - 10;
     }
   }
 
@@ -246,7 +246,7 @@
   .weather-forecast-time {
     color: darken($fg_color,30%);
     font-feature-settings: "tnum";
-    @include fontsize($base_font_size - 2);
+    font-size: $base_font_size - 20;
     font-weight: normal;
     padding-top: 0.2em;
     padding-bottom: 0.4em;

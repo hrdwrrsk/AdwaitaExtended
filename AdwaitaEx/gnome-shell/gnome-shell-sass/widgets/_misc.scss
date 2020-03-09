@@ -50,6 +50,6 @@
 .caps-lock-warning-label {
   text-align: center;
   padding-bottom: 8px;
-  @include fontsize($base_font_size - 1);
+  font-size: $base_font_size - 10;
   color: $warning_color;
 }

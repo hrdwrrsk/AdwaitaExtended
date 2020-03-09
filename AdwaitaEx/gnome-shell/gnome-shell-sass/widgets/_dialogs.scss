@@ -1,7 +1,7 @@
 /* Modal Dialogs */
 
 .headline {
-  @include fontsize($base_font_size + 1);
+  font-size: $base_font_size + 10;
 }
 
 .modal-dialog {
@@ -65,7 +65,7 @@
       .dialog-list-item-title { font-weight: bold; }
       .dialog-list-item-description {
         color: darken($fg_color,5%);
-        @include fontsize($base_font_size - 1);
+        font-size: $base_font_size - 10;
       }
     }
   }
@@ -79,7 +79,7 @@
   }
   .run-dialog-entry { width: 20em; }
   .run-dialog-description {
-    @include fontsize($base_font_size - 1);
+    font-size: $base_font_size - 10;
     text-align: center;
     color: darken($fg_color, 20%);
   }
@@ -120,7 +120,7 @@
 .prompt-dialog-info-label,
 .prompt-dialog-null-label {
   text-align: center;
-  @include fontsize($base_font_size - 1);
+  font-size: $base_font_size - 10;
 }
 
 .prompt-dialog-error-label {
