@@ -1,6 +1,6 @@
 /* Notifications & Mesage Tray */
 
-$notification_banner_height: 64px;
+$notification_banner_height: 48px;
 $notification_banner_width: 34em;
 
 // Banner notifications
@@ -13,6 +13,7 @@ $notification_banner_width: 34em;
   }
 
   .notification-button {
+  	min-height: 0.1em;
     @extend %bubble_button;
   }
 }

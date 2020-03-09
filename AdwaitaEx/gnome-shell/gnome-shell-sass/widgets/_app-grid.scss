@@ -1,13 +1,13 @@
 /* App Grid */
 
 $app_icon_size: 96px;
-$app_icon_padding: 24px;
+$app_icon_padding: 22px;
 
 // app icons
 .icon-grid {
   -shell-grid-horizontal-item-size: $app_icon_size + $app_icon_padding * 2;
   -shell-grid-vertical-item-size: $app_icon_size + $app_icon_padding * 2;
-  spacing: $base_spacing * 6;
+  spacing: $base_spacing * 4;
 
   .overview-icon {
     icon-size: $app_icon_size;
@@ -26,7 +26,7 @@ $app_grid_fg_color: #fff;
   @include overview-icon($app_grid_fg_color);
 
   .overview-icon.overview-icon-with-label {
-    padding: 10px 8px 5px 8px;
+    padding: 8px 6px 3px 6px;
 
     > StBoxLayout {
       spacing: $base_spacing;
@@ -48,8 +48,8 @@ $app_grid_fg_color: #fff;
   background-color: transparentize(darken($osd_bg_color,10%), 0.05);
 
   & .folder-name-container {
-    padding: 24px 36px 0;
-    spacing: 12px;
+    padding: 22px 34px 0;
+    spacing: 10px;
 
     & .folder-name-label,
     & .folder-name-entry {
@@ -66,8 +66,8 @@ $app_grid_fg_color: #fff;
       @extend %button;
 
       padding: 0;
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
       border-radius: 18px;
 
       & > StIcon { icon-size: 16px }
@@ -75,9 +75,9 @@ $app_grid_fg_color: #fff;
   }
 }
 .app-folder-dialog-container {
-  padding: 12px;
+  padding: 10px;
   width: 800px;
-  height: 600px;
+  height: 480px; // this actually solves big thicc appfolder issue on smaller display(s)
 }
 
 .app-folder-icon {
