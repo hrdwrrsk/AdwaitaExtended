@@ -12,33 +12,6 @@ theme_sources = [
   'gnome-shell-sass/_drawing.scss',
 ]
 
-# static files to copy
-data_sources = [
-  'calendar-today.svg',
-  'checkbox-focused.svg',
-  'checkbox-off-focused.svg',
-  'checkbox-off.svg',
-  'checkbox.svg',
-  'dash-placeholder.svg',
-  'key-enter.svg',
-  'key-layout.svg',
-  'key-hide.svg',
-  'key-shift.svg',
-  'key-shift-latched-uppercase.svg',
-  'key-shift-uppercase.svg',
-  'message-indicator-symbolic.svg',
-  'no-events.svg',
-  'noise-texture.png',
-  'no-notifications.svg',
-  'pad-osd.css',
-  'process-working.svg',
-  'running-indicator.svg',
-  'toggle-off-dark.svg',
-  'toggle-off.svg',
-  'toggle-on-dark.svg',
-  'toggle-on.svg',
-]
-
 # destination directory
 install_dir = shell_dir
 
@@ -58,6 +31,3 @@ foreach f : theme_files
         install_dir: install_dir,
     )
 endforeach
-
-# install static data files
-install_data(data_sources, install_dir: install_dir)
