@@ -10,6 +10,7 @@ theme_sources = [
   'gnome-shell-sass/_common.scss',
   'gnome-shell-sass/_extensions.scss',
   'gnome-shell-sass/_drawing.scss',
+  'gnome-shell-sass/_widgets.scss',
 ]
 
 # destination directory
