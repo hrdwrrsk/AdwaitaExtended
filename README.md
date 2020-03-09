@@ -4,6 +4,7 @@ AdwaitaExtended
 AdwaitaExtended is a stock Adwaita theme modified with:
 
 - Uses compact variant by default `$sizevariant: compact;` (to make it better for low-resolution laptops)
+- **New!** Adaptive font size in GNOME shell.
 - Consistent GTK2 theme (finally!)
 - Xfce4 support (with xfwm4 theme included)
 - Budgie Desktop support ! (Requires Budgie Desktop 10.5.1 or latest git version)
