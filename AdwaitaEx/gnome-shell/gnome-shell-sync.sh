@@ -94,6 +94,7 @@ files=(
   gnome-shell-sass/_common.scss
   gnome-shell-sass/COPYING
   gnome-shell-sass/_drawing.scss
+  gnome-shell-sass/_widgets.scss
   gnome-shell-sass/gnome-shell-sass.doap
   gnome-shell-sass/_high-contrast-colors.scss
   gnome-shell-sass/NEWS
