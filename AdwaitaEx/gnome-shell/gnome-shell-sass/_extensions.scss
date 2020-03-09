@@ -12,3 +12,31 @@
   	height: 2px;
 	}
 }
+
+/* Dash to Panel */
+@each $_dtp_pos, $_line in (Top, 0 2px),
+													 (Bottom, 0 -2px) {
+	#panel.dashtopanelMainPanel.dashtopanel#{$_dtp_pos} {
+		.app-well-app, .show-apps {
+			&:focus,
+			&:hover,
+			&:active,
+			&:checked {
+				.overview-icon {
+					border-radius: 0;
+					background-color: transparent;
+					box-shadow: none;
+					color: $panel_fg_color; //override because it will darker in light variant
+				}
+			}
+		}
+		
+		StButton.show-apps {
+			&:active, &:overview, &:focus, &:checked {
+     	 // Trick due to St limitations. It needs a background to draw a box-shadow
+     		background-color: rgba(0, 0, 0, 0.01);
+      	box-shadow: inset 0 -2px 0 0 lighten($selected_bg_color,5%);
+    	}
+		}
+	}
+}
