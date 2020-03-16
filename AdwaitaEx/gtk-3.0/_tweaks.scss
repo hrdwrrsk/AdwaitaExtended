@@ -23,3 +23,22 @@ placessidebar row {
 
 /**** Fix slimmed circular buttons ****/
 * { & button.circular { min-width: 0; } }
+
+/**** Fix for apps that uses HdyViewSwitcher in headerbar ****/
+headerbar {
+	hdyviewswitcher {
+		button.radio {
+			box {
+				&.horizontal.wide {
+					margin: -6px 0;
+				}
+				
+				&.vertical.narrow {
+					margin: -3px 0;
+				}
+			}
+		}
+		
+		label { margin: -2px 0; }
+	}
+}
