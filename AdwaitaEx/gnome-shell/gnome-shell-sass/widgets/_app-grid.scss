@@ -77,7 +77,11 @@ $app_grid_fg_color: #fff;
 .app-folder-dialog-container {
   padding: 10px;
   width: 800px;
-  height: 480px; // this actually solves big thicc appfolder issue on smaller display(s)
+  height: 0px; // reset Adwaita override
+  
+  // use adaptive height depending on screen resolution is used
+  min-height: 150px;
+  max-height: 600px;
 }
 
 .app-folder-icon {
