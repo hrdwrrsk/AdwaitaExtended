@@ -42,3 +42,11 @@ headerbar {
 		label { margin: -2px 0; }
 	}
 }
+
+/**** bring #2537 workaround to ssd decorations (dark theme only) ****/
+@if $variant == 'dark' {
+	window.ssd decoration {
+		background: black; /* transparent makes gtk3 leak light on the corners #2537 */
+	}
+}
+
