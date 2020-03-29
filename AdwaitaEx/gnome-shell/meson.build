@@ -48,6 +48,14 @@ theme_sources = [
   'gnome-shell-sass/widgets/_workspace-thumbnails.scss',
 ]
 
+# static files to copy
+data_sources = [
+	'toggle-off-dark.svg',
+  'toggle-off.svg',
+  'toggle-on-dark.svg',
+  'toggle-on.svg',
+]
+
 # destination directory
 install_dir = shell_dir
 
@@ -67,3 +75,6 @@ foreach f : theme_files
         install_dir: install_dir,
     )
 endforeach
+
+# install static data files
+install_data(data_sources, install_dir: install_dir)
