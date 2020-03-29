@@ -225,7 +225,7 @@ $budgie_borders: if($variant == 'light', transparentize(black, 0.77), $borders_c
 		background-color: $bg_color;
 		
 		button, button:backdrop {
-			@extend %button_basic_flat;
+			@include button(undecorated);
 			color: $fg_color;
 			border: 0;
 			border-radius: 0;
@@ -236,8 +236,8 @@ $budgie_borders: if($variant == 'light', transparentize(black, 0.77), $borders_c
 			}
 		}
 		
-		&.horizontal button { padding: 0 $_circ_btn_pad; }
-		&.vertical button { padding: $_circ_btn_pad 0; }
+		&.horizontal button { padding: 0px $_img_btn_pad; }
+		&.vertical button { padding: $_img_btn_pad 0; }
 		
 		&.transparent {
 			background-color: if($variant == 'light', transparentize($bg_color, 0.10), $osd_bg_color);
