@@ -12,6 +12,8 @@ $panel_height: 28px;
   font-weight: bold;
   height: $panel_height;
   font-feature-settings: "tnum";
+  
+  &:overview { background-color: transparentize($panel_bg_color, 0.3); }
 
   // transparent panel on lock & login screens
   &.unlock-screen,
