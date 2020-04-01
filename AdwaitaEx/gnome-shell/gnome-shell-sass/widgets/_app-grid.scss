@@ -75,16 +75,9 @@ $app_grid_fg_color: #fff;
   }
 }
 .app-folder-dialog-container {
-  padding: 10px;
-  width: 0px;
-  height: 0px; // reset Adwaita override
-  
-  // use adaptive width/height depending on screen resolution is used
-  min-width: 400px;
-  max-width: 800px;
-  
-  min-height: 150px;
-  max-height: 600px;
+  padding: $base_padding + 4;
+  width: 600px;
+  height: 400px;
 }
 
 .app-folder-icon {
