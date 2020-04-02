@@ -47,7 +47,7 @@ wget_check=`which wget | wc -l`
 [ $wget_check == 0 ] && echo "install wget" && exit 1
 
 
-_branch=${_branch:=master}
+_branch=${_branch:=gnome-3-36}
 data=https://gitlab.gnome.org/GNOME/gnome-shell/raw/${_branch}/data
 root=${data}/theme
 
