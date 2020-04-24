@@ -7,7 +7,7 @@ $app_icon_padding: 22px;
 .icon-grid {
   -shell-grid-horizontal-item-size: $app_icon_size + $app_icon_padding * 2;
   -shell-grid-vertical-item-size: $app_icon_size + $app_icon_padding * 2;
-  spacing: $base_spacing * 4;
+  spacing: $base_spacing * 6;
 
   .overview-icon {
     icon-size: $app_icon_size;
@@ -44,12 +44,12 @@ $app_grid_fg_color: #fff;
 .app-folder-dialog {
   border-radius: $modal_radius * 1.5;
   border: 1px solid $osd_outer_borders_color;
-  spacing: 12px;
+  spacing: 10px;
   background-color: transparentize(darken($osd_bg_color,10%), 0.05);
 
   & .folder-name-container {
-    padding: 22px 34px 0;
-    spacing: 10px;
+    padding: 20px 32px 0;
+    spacing: 8px;
 
     & .folder-name-label,
     & .folder-name-entry {
@@ -66,8 +66,8 @@ $app_grid_fg_color: #fff;
       @extend %button;
 
       padding: 0;
-      width: 34px;
-      height: 34px;
+      width: 32px;
+      height: 32px;
       border-radius: 18px;
 
       & > StIcon { icon-size: 16px }
