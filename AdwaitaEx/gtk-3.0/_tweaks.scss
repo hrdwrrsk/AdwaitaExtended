@@ -1,11 +1,6 @@
 // Additional tweaks
 // Instead modifying _common.scss, let some tweaks available here
 
-/**** remove 'extra padding' in headerbar titlebutton ****/
-button.titlebutton:not(.appmenu) {
-	margin: 0;
-}
-
 /**** Reduce PlacesSidebar height ****/
 placessidebar row {
 	min-height: 34px;

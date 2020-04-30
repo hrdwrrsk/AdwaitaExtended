@@ -4650,12 +4650,10 @@ button.titlebutton {
 
   @extend %button_basic_flat;
 
-  @include _button_text_shadow;
-
   &:not(.appmenu) {
     border-radius: 9999px;
     padding: $_hb_btn_pad;
-    margin: 0 2px;
+    margin: 0;
     min-width: 0;
     min-height: 0;
   }
