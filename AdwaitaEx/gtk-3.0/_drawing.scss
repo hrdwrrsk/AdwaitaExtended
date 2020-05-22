@@ -194,8 +194,8 @@
   //
     color: $tc;
     outline-color: transparentize($tc, 0.7);
-    border-color: if($c != $bg_color, _border_color($c), $borders_color);
-    border-bottom-color: if($c != $bg_color, _border_color($c, true), $alt_borders_color);
+    border-color: if($c != $bg_color, _border_color(if($variant == 'light', $c, darken($c, 10%))), $borders_color);
+    border-bottom-color: if($c != $bg_color, _border_color(if($variant == 'light', $c, darken($c, 10%)), true), $alt_borders_color);
     $button_fill: if($variant == 'light', linear-gradient(to top, darken($c, 4%) 2px, $c),
                                           linear-gradient(to top, darken($c,1%) 2px, $c)) !global;
     background-image: $button_fill;
@@ -208,8 +208,8 @@
   //
     color: $tc;
     outline-color: transparentize($tc, 0.7);
-    border-color: if($c != $bg_color, _border_color($c), $borders_color);
-    border-bottom-color: if($c != $bg_color, _border_color($c, true), $alt_borders_color);
+    border-color: if($c != $bg_color, _border_color(if($variant == 'light', $c, darken($c, 10%))), $borders_color);
+    border-bottom-color: if($c != $bg_color, _border_color(if($variant == 'light', $c, darken($c, 10%)), true), $alt_borders_color);
     @if $variant == 'light' {
       $button_fill: linear-gradient(to top, $c, lighten($c, 1%) 1px) !global;
       @include _shadows(inset 0 1px _button_hilight_color(lighten($c, 6%)), $_button_edge, $_button_shadow);
@@ -266,7 +266,7 @@
   //
     color: $tc;
     outline-color: transparentize($tc, 0.7);
-    border-color: if($c != $bg_color, _border_color($c), $borders_color);
+    border-color: if($c != $bg_color, _border_color(if($variant == 'light', $c, darken($c, 10%))), $borders_color);
     $button_fill: if($variant == 'light', image(darken($c, 14%)), image(darken($c, 9%))) !global;
     background-image: $button_fill;
     @include _shadows(inset 0 1px transparentize($_hilight_color, 1), $_button_edge);
