@@ -215,8 +215,10 @@ dialog.xfsm-logout-dialog.keycap {
 $budgie_borders: if($variant == 'light', transparentize(black, 0.77), $borders_color);
 
 .budgie-container {
-	padding: 0;
-	background-color: transparent
+	&, &:backdrop {
+		padding: 0;
+		background-color: transparent;
+	}
 }
 
 .budgie-panel {
@@ -240,7 +242,7 @@ $budgie_borders: if($variant == 'light', transparentize(black, 0.77), $borders_c
 		&.vertical button { padding: $_img_btn_pad 0; }
 		
 		&.transparent {
-			background-color: if($variant == 'light', transparentize($bg_color, 0.10), $osd_bg_color);
+			background-color: rgba($bg_color, 0.45);
 		}
 	}
 }
@@ -281,6 +283,8 @@ box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher {
 }
 
 // raven sidebar
+$raven_spacing: $window_radius + 1;
+
 frame.raven-frame > border {
   border-style: none;
 }
@@ -296,25 +300,12 @@ $raven_borders: ((top, bottom), (bottom, top), (left, right), (right, left));
 }
 
 .raven {
-	> box { margin-bottom: -10px; }
-	
 	background-color: $bg_color;
 	color: $fg_color;
 	padding: 0;
 	border: none;
-	
-	.raven-background {
-    border-style: solid none;
-    border-width: 1px;
-    border-color: $borders_color;
-    background-color: $base_color;
-	}
 
 	.raven-header {
-		&:not(.top) {
-			margin-top: -7px;
-		}
-	
 		&.top {
 			@extend %titlebar; // use styling same as header bar
 		}
@@ -324,27 +315,94 @@ $raven_borders: ((top, bottom), (bottom, top), (left, right), (right, left));
 		}
 	}
 	
-	&-notifications-view {
-		.raven-notifications-group {
-			.notification-clone {
-				background-color: $bg_color;
-				border: 1px solid $borders_color;
-				padding: $_hb_btn_pad + 4px;
-				border-radius: $window_radius;
-				&:dir(ltr) { margin-right: $_hb_btn_pad; }
-				&:dir(rtl) { margin-left: $_hb_btn_pad; }
+	// Notifications view
+	box.vertical > stack > box.vertical {
+		> .raven-header {
+			background-color: $base_color;
+			border-bottom: 1px solid $borders_color;
+			margin-top: -($raven_spacing - 3);
+		}
+		
+		> .raven-background > viewport.frame { 
+			padding: 0;
+			margin: ($raven_spacing - 3) 0;
+			list { background-color: transparent; }
+			
+			> list > row.activatable {
+				padding: 0;
+				
+				&:hover, &:active, &:selected {
+					background: none;
+					box-shadow: none;
+					
+					list > row.activatable {
+						&:hover, &:active, &:selected {
+							background: none;
+							box-shadow: none;
+						}
+					}
+				}
+			}
+			&:dir(ltr) { 
+				margin-left: $raven_spacing - 5;
+				margin-right: $raven_spacing;
+			}
+			&:dir(rtl) { 
+				margin-left: $raven_spacing - 5;
+				margin-right: $raven_spacing;
 			}
 		}
 	}
 	
+	&-notifications-view {
+		.raven-notifications-group {
+			border: 1px solid $borders_color;
+			background-color: $base_color;
+			border-radius: $window_radius;
+			padding: ($raven_spacing + 2) $raven_spacing 0;
+			box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+			
+			.notification-clone {
+				border-top: 1px solid transparentize(black, 0.9);
+				padding: $raven_spacing;
+				margin: 0 -11px;
+				
+				button.flat { border-radius: 99px; }
+				
+				&:dir(ltr) { padding-left: $raven_spacing + 4; }
+				&:dir(rtl) { padding-right: $raven_spacing + 4; }
+			}
+		}
+	}
+	
+	// Applets View
 	scrolledwindow > .frame {
-		padding: 0;
+		padding: 0 $raven_spacing;
 		
 		> box.vertical > box.vertical {
-			box-shadow: inset 0 -1px $budgie_borders;
+			margin: $raven_spacing 0;
+			background-color: $base_color;
+			border-radius: $window_radius;
+			box-shadow: inset 0 0 0 1px $budgie_borders, 
+									0 1px 1px 0 rgba(0,0,0,0.1);
+		}
+		
+		.raven-header {
+			margin-top: -($raven_spacing - 1);
+			border-top-left-radius: $window_radius;
+			border-top-right-radius: $window_radius;
+		}
+		
+		.raven-background {
+			margin-bottom: -($raven_spacing - 1);
+			border-bottom-left-radius: $window_radius;
+			border-bottom-right-radius: $window_radius;
+			
+			border-top: 1px solid $borders_color;
 		}
 		
 		box.audio-widget {
+			padding: 0 1px;
 			list {
 				&.sound-devices row.activatable {
 					> box > label {
@@ -372,30 +430,55 @@ $raven_borders: ((top, bottom), (bottom, top), (left, right), (right, left));
 			}
 		}
 	}
-}
+	
+	// raven calendar applet
+	calendar {
+		background-color: transparent;
+		border: 1px solid $borders_color;
+		border-bottom-left-radius: $window_radius;
+		border-bottom-right-radius: $window_radius;
+		
+		&:selected {
+			@extend %selected_items;
 
-// raven calendar applet
-calendar.raven-calendar {
-	border-width: 1px 0 1px 0;
-	border-style: solid;
-	border-color: $borders_color;
-}
-// raven mpris applet
-.raven-mpris {
-	@extend %osd;
-	button.image-button {
-		@extend %osd_button;
+			border-radius: 3px;
+		}
+
+		&.header {
+			border-radius: 0;
+			border-bottom-color: transparentize(black, 0.9);
+
+			&:backdrop { border-bottom-color: transparentize(black, 0.9); }
+		}
 	}
-}
-// powerstrip
-.powerstrip {
-	box-shadow: inset 0 1px $budgie_borders;
+	
+	.raven-mpris {
+		@extend %osd;
+		border: 1px solid $osd_borders_color;
+		background-clip: padding-box;
+		margin-bottom: $raven_spacing - 1;
+		border-bottom-left-radius: 2px;
+		border-bottom-right-radius: 2px;
+		
+		button.image-button {
+			@extend %osd_button;
+		}
+	}
+	
+	// powerstrip
+	.powerstrip {
+		box-shadow: inset 0 1px $budgie_borders;
+	}
 }
 
 // notification/osds
 .budgie-osd-window,
 .budgie-switcher-window,
 .budgie-notification-window, { background-color: transparent; }
+
+.budgie-notification-window {
+	button.flat { border-radius: 99px; }
+}
 
 .drop-shadow {
 	&, decoration { border-radius: $window_radius; }
@@ -407,7 +490,9 @@ calendar.raven-calendar {
 %budgie_dialog {
 	&, decoration { border-radius: 7px; }
 	background-color: $bg_color;
-	box-shadow: 0 1px 2px transparentize(black, 0.8), 0 0 0 1px transparentize($budgie_borders, 0.1);
+	box-shadow: 0 1px 2px transparentize(black, 0.8), 
+							0 0 0 1px transparentize($budgie_borders, 0.1),
+							inset 0 1px $borders_edge;
 }
 
 %budgie_dialog_button {
@@ -445,8 +530,7 @@ window.budgie-popover:not(.csd) {
 		padding: 2px;
 		background-color: $popover_bg_color;
 		border-radius: $popover_radius;
-		
-		background-clip: padding-box;
+		background-clip: border-box;
 		border: 1px solid if($variant=='light', transparentize(black, 0.77), transparentize($borders_color, 0.1));
 		
 		box-shadow: 0 1px 2px transparentize(black, 0.7);
@@ -462,7 +546,7 @@ window.budgie-popover:not(.csd) {
 		padding: 4px;
 	}
 	
-	button {
+	button.flat {
 		min-height: 20px;
   	padding-left: 5px;
   	padding-right: 5px;
