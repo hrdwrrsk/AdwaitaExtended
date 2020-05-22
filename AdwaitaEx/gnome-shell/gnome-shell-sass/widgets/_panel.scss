@@ -29,7 +29,7 @@ $panel_height: 28px;
 
   // spacing between activities, app menu and such
   #panelLeft, #panelCenter {
-    spacing: $base_spacing;
+    spacing: 0;
   }
 
   // the rounded outset corners
@@ -50,6 +50,8 @@ $panel_height: 28px;
     color: $panel_fg_color;
     -natural-hpadding: $base_padding * 2;
     -minimum-hpadding: $base_padding;
+		
+		StLabel { padding: 0 $base_margin; }
 
     &:hover {
       color: lighten($panel_fg_color, 20%);
