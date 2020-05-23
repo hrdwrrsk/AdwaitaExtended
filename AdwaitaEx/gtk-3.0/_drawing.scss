@@ -313,7 +313,7 @@
   // backdrop button
   //
     $_bg: if($c != $bg_color, $c, $backdrop_bg_color);
-    $_bc: if($variant == 'light', $c, _border_color($c));
+    $_bc: if($variant == 'light', $c, _border_color(darken($c, 10%)));
 
     color: if($tc != $fg_color, mix($tc, $_bg, 80%), $backdrop_fg_color);
     border-color: if($c != $bg_color, $_bc, $backdrop_borders_color);
