@@ -8,6 +8,14 @@ $notification_banner_width: 34em;
   min-height: $notification_banner_height;
   width: $notification_banner_width;
   margin: $base_margin * 6;
+  
+  background-clip: padding-box;
+  
+  @if $variant == "light" {
+    &, &:hover, &:active {
+      border-color: transparentize(black, 0.6);
+    }
+  }
 
   .notification-actions {
     spacing: 0;
