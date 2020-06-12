@@ -110,7 +110,7 @@ stage {
   border-radius: $base_border_radius;
   border-style: solid;
   border-width: 1px;
-  min-height: 22px;
+  min-height: 24px;
   padding: $base_padding * 0.5 $base_padding * 4;
 
   @include button(normal);

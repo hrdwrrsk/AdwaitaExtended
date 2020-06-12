@@ -6,7 +6,7 @@ $search_entry_height: 36px;
 %search_entry,
 .search-entry {
   width: $search_entry_width;
-  padding: $base_padding+1 $base_padding+3;
+  padding: 1px $base_padding+3;
   border-radius: $search_entry_height * 0.5; // half the height
   color: transparentize($fg_color,0.3);
   background-color: $bg_color;
@@ -19,7 +19,7 @@ $search_entry_height: 36px;
   }
 
   &:focus {
-    padding: $base_padding $base_padding+2; // 1px less to account for wider border
+    padding: 0 $base_padding+2; // 1px less to account for wider border
     border-width: 2px;
     border-style: solid;
     border-color: $selected_bg_color;
