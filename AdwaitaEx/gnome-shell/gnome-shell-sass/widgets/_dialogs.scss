@@ -35,11 +35,11 @@
 
   .message-dialog-title {
     text-align: center;
-    font-size: 18pt;
+    font-size: $base_font_size + 50;
     font-weight: 800;
 
     &.leightweight {
-      font-size: 13pt;
+      font-size: $base_font_size + 6.3;
       font-weight: 800;
     }
   }

@@ -67,7 +67,7 @@ stage {
 
 // Text
 %status_text {
-  font-size: 2em;
+  font-size: $base_font_size * 2;
   font-weight: bold;
   color: $osd_fg_color;
 }

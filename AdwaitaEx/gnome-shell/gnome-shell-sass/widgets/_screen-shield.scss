@@ -9,13 +9,13 @@
 }
 
 .unlock-dialog-clock-time {
-  font-size: 64pt;
+  font-size: 533%;
   padding-top: 42px;
   font-feature-settings: "tnum";
 }
 
 .unlock-dialog-clock-date {
-  font-size: 16pt;
+  font-size: $base_font_size + 31.3;
   font-weight: normal;
 }
 
