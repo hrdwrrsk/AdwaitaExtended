@@ -34,8 +34,17 @@ $popover_arrow_height: 12px;
   spacing: $base_padding;
   padding: $base_padding;
 
-  &:ltr { padding-right:1.75em; padding-left: 0; }
-  &:rtl { padding-right: 0; padding-left:1.75em; }
+  &:ltr { 
+    padding: $base_padding 0;
+    padding-right:1.75em; 
+    padding-left: 0; 
+  }
+
+  &:rtl { 
+    padding: $base_padding 0;
+    padding-right: 0; 
+    padding-left:1.75em; 
+  }
 
   &:checked {
     background-color: lighten($bg_color, 2%);
