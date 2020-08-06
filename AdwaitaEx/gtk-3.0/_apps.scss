@@ -719,3 +719,104 @@ widget > box.workspace-switcher {
 		}
 	}
 }
+
+/**** MATE desktop ****/
+
+/**** MATE panel ****/
+.mate-panel-menu-bar,
+.mate-panel-menu-bar menubar,
+.mate-panel-menu-bar menuitem,
+#PanelPlug,
+#PanelApplet button,
+PanelToplevel.background,
+#PanelApplet-window-menu-applet-button {
+    border-image: none;
+    box-shadow: none;
+}
+
+.mate-panel-menu-bar #PanelApplet button {
+	&.flat, &.toggle, &.flat.toggle { 
+		border-radius: 0;
+	}
+}
+
+PanelToplevel {
+	&.horizontal.top > grid {
+    	border-style: outset;
+    	border-width: 0px 0px 1px 0px;
+    	border-color: $borders_color;
+	}
+
+	&.horizontal.bottom > grid {
+    	border-style: outset;
+    	border-width: 1px 0px 0px 0px;
+    	border-color: $borders_color;
+	}
+
+	&.vertical.left > grid {
+    	border-style: outset;
+    	border-width: 0px 1px 0px 0px;
+    	border-color: $borders_color;
+	}
+
+	&.vertical.right > grid {
+    	border-style: outset;
+    	border-width: 0px 0px 0px 1px;
+    	border-color: $borders_color;
+	}
+}
+
+MatePanelAppletFrameDBus > MatePanelAppletFrameDBus {
+  background-image:
+    repeating-linear-gradient(
+      currentcolor,
+      currentcolor 4px,
+      transparent 4px,
+      transparent 6px
+    );
+  background-repeat: no-repeat;
+  background-size: 4px 10px;
+  color: transparent;
+
+  &:dir(ltr) {
+    background-position: 3px;
+  }
+
+  &:dir(rtl) {
+    background-position: calc(100% - 3px);
+  }
+}
+
+na-tray-applet {
+  -NaTrayApplet-icon-padding: 6px;
+}
+
+/**** Caja ****/
+// pathbar toggle button
+.caja-navigation-window box.horizontal > button.toggle.image-button {
+	@extend %button_basic_flat;
+}
+
+// pathbar styling
+// FIXME i want a GTK filechooser styled pathbar but it seems
+// Caja has hardcoded padding/margin between pathbar buttons
+.caja-pathbar button {
+	&.slider-button {
+		min-width: 24px;
+	}
+}
+
+// left sidebar
+.caja-side-pane notebook viewport.frame,
+.caja-side-pane notebook widget .vertical {
+  background-color: $sidebar_bg_color;
+}
+
+.caja-side-pane notebook,
+.caja-notebook {
+  border-top: 1px solid $borders_color;
+
+  .frame {
+    border-style: none;
+  }
+}
