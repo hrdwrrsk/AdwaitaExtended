@@ -820,3 +820,8 @@ na-tray-applet {
     border-style: none;
   }
 }
+
+// toolbar tweaks
+.caja-navigation-window toolbar {
+	border-bottom: 1px solid $borders_color;
+}
