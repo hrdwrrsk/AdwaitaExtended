@@ -1,7 +1,7 @@
 #! /bin/bash
 
 INKSCAPE="/usr/bin/inkscape"
-ZOPFLIPNG="/usr/bin/zopflipng"
+OPTIPNG="/usr/bin/optipng"
 
 SRC_FILE="assets-external.svg"
 ASSETS_DIR="assets"
@@ -14,11 +14,14 @@ if [ -f $ASSETS_DIR/$i.png ]; then
 else
     echo
     echo Rendering $ASSETS_DIR/$i.png
-    $INKSCAPE --export-id=$i-dark \
+    $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
-    && $ZOPFLIPNG -ym $ASSETS_DIR/$i.png $ASSETS_DIR/$i.png
+		
+              # --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Uncomment this line and comment the above line if you're using Inkscape 0.9 or older
+
+							--export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+    && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 fi
 done
 exit 0
