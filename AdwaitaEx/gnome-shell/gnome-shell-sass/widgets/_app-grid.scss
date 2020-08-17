@@ -26,7 +26,7 @@ $app_grid_fg_color: #fff;
   @include overview-icon($app_grid_fg_color);
 
   .overview-icon.overview-icon-with-label {
-    padding: 8px 6px 3px 6px;
+    padding: 10px 8px 5px 8px;
 
     > StBoxLayout {
       spacing: $base_spacing;
@@ -75,7 +75,7 @@ $app_grid_fg_color: #fff;
   }
 }
 .app-folder-dialog-container {
-  padding: $base_padding + 4;
+  padding: $base_padding + 8;
   width: 600px;
   height: 400px;
 }
